@@ -20,10 +20,19 @@ The server depends on the vault path being set via the `OBSIDIAN_VAULT_PATH` env
 
 ### Running the Server
 ```bash
+# Using the convenience script (defaults to ~/Documents/Obsidian if OBSIDIAN_VAULT_PATH not set)
+./start_server.sh                    # Standard mode (read-write)
+./start_server.sh --readonly         # Readonly mode
+
+# Or run directly with custom vault path
 OBSIDIAN_VAULT_PATH="/Users/mihai.neagu/Library/CloudStorage/OneDrive-DanteInternationalS.A(2)/Teams/SOLID" python3.11 main.py
+OBSIDIAN_VAULT_PATH="/Users/mihai.neagu/Library/CloudStorage/OneDrive-DanteInternationalS.A(2)/Teams/SOLID" python3.11 main.py --readonly
 ```
 
 The server runs in stdio transport mode for MCP communication.
+
+#### Readonly Mode
+When started with the `--readonly` flag, the server only exposes readonly tools (`list_notes`, `read_note`, `search_notes`, `get_metadata`). The write operations (`write_note`, `delete_note`) are not available.
 
 ### Environment Setup
 ```bash

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3.11 -m pip:*)",
+      "Edit",
+      "Write",
+      "Bash(grep:*)",
+      "Bash(ls:*)"
+    ],
+    "deny": [],
+    "ask": [
+      "Delete",
+      "Bash(rm:*)",
+      "Bash(rmdir:*)"
+    ]
+  }
+}
